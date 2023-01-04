@@ -1,0 +1,40 @@
+int charlen(char *str){
+
+    int count=0;
+
+    for(int i=0;str[i]!='\0';i++){
+        count++;
+    }
+    return count;
+}
+
+bool checkPalindrome(char str[]) {
+    int start=0,end=charlen(str)-1;
+    
+    
+    while(start<end){
+    
+        
+        if(str[start]!=str[end]){
+            
+         
+            
+            return false;
+            
+            break;
+        }
+        
+        else{
+            start++;
+        
+            end--;
+        
+        }
+
+        
+    }
+    
+    
+    return true;
+    
+}
