@@ -1,0 +1,81 @@
+int charlen(char ch[]){
+    
+    int count=0;
+    
+    for(int i=0;ch[i]!='\0';i++){
+        
+        count++;
+    }
+    
+    return count;
+}
+void reverse(char ch[]){
+    
+    int n=charlen(ch);
+    
+    int start=0;
+    
+    int end=n-1;
+    while(start<=end){
+        
+        int temp=ch[start];
+        ch[start]=ch[end];
+        
+        ch[end]=temp;
+        
+        start++;
+        
+        end--;
+    }
+}
+void reverseStringWordWise(char input[]) {
+     
+    
+    // cout<<ch<<endl;
+    
+    int n=charlen(input);
+    reverse(input);
+    // int start=0;
+    
+    // int end=n-1;
+    
+    int i=0;
+    
+    int start=0;
+    int end=0;
+    
+    while(input[i]!='\0'){
+        
+        // Welcome to coding ninjas
+        
+        if(input[i]!=' '){
+            
+            end=i;
+        }
+        
+        if(input[i]==' ' || input[i+1]=='\0'){
+            
+            while(start<=end){
+        
+                int temp=input[start];
+                input[start]=input[end];
+                
+                input[end]=temp;
+                
+                start++;
+                
+                end--;
+             }
+        }
+        if(input[i]==' ' && input[i+1]!=' '){
+            
+            start=i+1;
+            
+            end=i+1;
+        }
+        i++;
+        
+    }
+    
+
+}
