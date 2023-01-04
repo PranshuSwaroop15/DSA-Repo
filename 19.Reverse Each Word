@@ -1,0 +1,41 @@
+int charlen(char input[]){
+    
+    int count=0;
+    
+    for(int i=0;input[i]!='\0';i++){
+        
+        count++;
+    }
+    
+    return count;
+}
+void reverseEachWord(char input[]) {
+    int p=0;
+    int q=0;
+    int n=charlen(input);
+    for(int i=0;i<n;i++){
+        // Welcome To Coding Ninjas
+        if(input[i]==' ' || input[i+1]=='\0'){
+            q=i-1;
+            while(p<q){
+                
+                int temp=input[p];
+                input[p]=input[q];
+                input[q]=temp;
+                
+                p++;
+                
+                q--;
+            }
+            
+            p=i+1;
+            
+            q=p+1;
+            
+        }
+        if(input[i]!=' '){
+            q++;
+        }
+        
+    }
+}
