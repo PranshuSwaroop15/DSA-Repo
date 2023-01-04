@@ -1,0 +1,33 @@
+void arrange(int *arr, int n)
+{
+
+  int x, y;
+
+  int start = 0;
+
+  int end = n - 1;
+
+  x = 1;
+
+  y = 2;
+
+  int mid = (start + end) / 2;
+  while (start <= end ) {
+
+    arr[start] = x;
+    start++;
+    x += 2;
+
+    if (start == n / 2 + 1) {
+
+      break;
+    }
+
+    arr[end] = y;
+
+    end--;
+
+    y += 2;
+  }
+
+}
