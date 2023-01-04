@@ -1,0 +1,21 @@
+void bubbleSort(int *input, int size)
+{
+    for(int k=0;k<size-1;k++){
+        int temp;
+        for(int i=k+1;i<size;i++){
+
+            if(input[i]<input[k]){
+                
+                temp=input[k];
+                
+                input[k]=input[i];
+                
+                input[i]=temp;
+            }
+           
+        //   j++;
+        
+    }
+
+    }
+}
