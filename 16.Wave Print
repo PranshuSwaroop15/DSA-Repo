@@ -1,0 +1,18 @@
+void wavePrint(int **input, int nRows, int mCols)
+{
+  for (int j = 0; j < mCols; j++) {
+
+    for (int i = 0; i < nRows; i++) {
+
+      if (j % 2 != 0) {
+
+        cout<<input[nRows - i - 1][j]<<" ";
+      }
+
+      else {
+
+        cout<<input[i][j]<<" ";
+      }
+    }
+  }
+}
