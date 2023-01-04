@@ -1,0 +1,67 @@
+#include<climits>
+void findLargest(int **input, int nRows, int mCols)
+{
+  int max_row=INT_MIN;
+    int max_col=INT_MIN;
+    
+    int count_row=0;
+    
+    int count_col=0;
+    //maximum sum in rows
+    
+    for(int i=0;i<nRows;i++){
+        int sum_row=0;
+        for(int j=0;j<mCols;j++){
+            
+            sum_row+=input[i][j];
+            
+            if(sum_row>max_row){
+                
+                max_row=sum_row;
+                count_row=i;
+            }
+            
+        }
+        // cout<<sum_row<<endl;
+    }
+    
+    
+    // maximum sum of columns
+    
+    for(int i=0;i<mCols;i++){
+        int sum_col=0;
+    for(int j=0;j<nRows;j++){
+            
+        sum_col+=input[j][i];
+            
+        if(sum_col>max_col){
+                
+                max_col=sum_col;
+                count_col=i;
+        }
+            
+        }
+        // cout<<sum_col<<endl;
+    }
+    
+    
+    
+    
+    if(max_row>max_col){
+        
+        cout<<"row "<<count_row<<" "<<max_row<<endl;
+    }
+    else if(max_row==max_col){
+        
+        if(count_row<=count_col){
+            cout<<"row "<<count_row<<" "<<max_row<<endl;
+        }
+        else{
+            cout<<"column "<<count_col<<" "<<max_col<<endl;
+        }
+    }
+    else{
+        cout<<"column "<<count_col<<" "<<max_col<<endl;
+    }
+
+}
